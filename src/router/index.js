@@ -2,12 +2,8 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Home from '../pages/Home';
-import Splash from '../pages/Splash';
-import Orders from '../pages/Orders';
-import Account from '../pages/Account';
+import {Home, Splash, Orders, Account} from '../pages';
 
-const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const MainApp = () => {
@@ -20,10 +16,12 @@ const MainApp = () => {
   );
 };
 
+const Stack = createStackNavigator();
+
 const Router = () => {
   return (
     <Stack.Navigator
-      initialRouteName="MainApp"
+      initialRouteName="Splash"
       screenOptions={{
         headerShown: false,
       }}>
