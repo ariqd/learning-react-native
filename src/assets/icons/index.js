@@ -12,6 +12,7 @@ import IconDress from './Dress.svg';
 import IconHanduk from './Handuk.svg';
 import IconSetrika from './Setrika.svg';
 import IconTruk from './Truk.svg';
+import IconPesananAktif from './PesananAktif.svg';
 
 export {
   Home,
@@ -28,4 +29,5 @@ export {
   IconTimbangan,
   IconSetrika,
   IconDress,
+  IconPesananAktif,
 };

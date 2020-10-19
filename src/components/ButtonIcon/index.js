@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   container: (layanan) => ({
     // alignItems: 'center',
     // padding: layanan && 12,
-    marginBottom: 12,
+    marginBottom: layanan && 12,
     paddingRight: layanan && 30,
   }),
   item: (layanan) => ({
