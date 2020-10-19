@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import {Header, Logo} from '../../assets';
+import {Saldo} from '../../components';
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
           <Text style={styles.name}>Ariq Daffa</Text>
         </View>
       </ImageBackground>
+      <Saldo />
     </View>
   );
 };
@@ -44,7 +46,7 @@ const styles = StyleSheet.create({
     height: windowHeight * 0.07,
   },
   hello: {
-    marginVertical: 30,
+    marginTop: windowHeight * 0.03,
   },
   welcome: {
     fontSize: 20,
