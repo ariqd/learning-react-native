@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import {Header, Logo} from '../../assets';
-import {Saldo} from '../../components';
+import {ButtonIcon, Saldo} from '../../components';
 
 const Home = () => {
   return (
@@ -21,6 +21,17 @@ const Home = () => {
         </View>
       </ImageBackground>
       <Saldo />
+      <View style={styles.layanan}>
+        <Text style={styles.label}>Layanan Kami</Text>
+        <View style={styles.iconLayanan}>
+          <ButtonIcon title="Kiloan" layanan />
+          <ButtonIcon title="Satuan" layanan />
+          <ButtonIcon title="VIP" layanan />
+          <ButtonIcon title="Karpet" layanan />
+          <ButtonIcon title="Setrika" layanan />
+          <ButtonIcon title="Ekspres" layanan />
+        </View>
+      </View>
     </View>
   );
 };
@@ -33,12 +44,11 @@ const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: '#000',
   },
   header: {
     width: windowWidth,
     height: windowHeight * 0.32,
-    paddingHorizontal: 15,
+    paddingHorizontal: 30,
     paddingTop: 10,
   },
   logo: {
@@ -55,5 +65,20 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 26,
     fontFamily: 'TitilliumWeb-Bold',
+  },
+  layanan: {
+    // paddingHorizontal: 30,
+    paddingLeft: 30,
+    paddingTop: 15,
+  },
+  label: {
+    fontSize: 18,
+    fontFamily: 'TitilliumWeb-Bold',
+  },
+  iconLayanan: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+    flexWrap: 'wrap',
   },
 });

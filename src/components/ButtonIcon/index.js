@@ -1,9 +1,18 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {Bill, Point} from '../../assets';
+import {
+  Bill,
+  Point,
+  IconBaju,
+  IconDress,
+  IconSetrika,
+  IconHanduk,
+  IconTimbangan,
+  IconTruk,
+} from '../../assets';
 import {SECONDARY_COLOR} from '../../utils/constants';
 
-const ButtonIcon = ({title}) => {
+const ButtonIcon = ({title, layanan}) => {
   const Icon = () => {
     if (title === 'Add Saldo') {
       return <Bill />;
@@ -11,16 +20,34 @@ const ButtonIcon = ({title}) => {
     if (title === 'Get Points') {
       return <Point />;
     }
+    if (title === 'Kiloan') {
+      return <IconTimbangan />;
+    }
+    if (title === 'Satuan') {
+      return <IconBaju />;
+    }
+    if (title === 'VIP') {
+      return <IconDress />;
+    }
+    if (title === 'Karpet') {
+      return <IconHanduk />;
+    }
+    if (title === 'Setrika') {
+      return <IconSetrika />;
+    }
+    if (title === 'Ekspres') {
+      return <IconTruk />;
+    }
 
     return <Bill />;
   };
 
   return (
-    <TouchableOpacity style={styles.container}>
-      <View style={styles.item}>
+    <TouchableOpacity style={styles.container(layanan)}>
+      <View style={styles.item(layanan)}>
         <Icon />
       </View>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.title(layanan)}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -28,17 +55,21 @@ const ButtonIcon = ({title}) => {
 export default ButtonIcon;
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-  },
-  item: {
+  container: (layanan) => ({
+    // alignItems: 'center',
+    // padding: layanan && 12,
+    marginBottom: 12,
+    paddingRight: layanan && 30,
+  }),
+  item: (layanan) => ({
     backgroundColor: SECONDARY_COLOR,
-    padding: 5,
+    padding: layanan ? 12 : 5,
     borderRadius: 10,
-    marginBottom: 3,
-  },
-  title: {
-    fontSize: 10,
-    fontFamily: 'TitilliumWeb-Regular',
-  },
+    // marginBottom: 3,
+  }),
+  title: (layanan) => ({
+    fontSize: layanan ? 14 : 10,
+    fontFamily: layanan ? 'TitilliumWeb-Light' : 'TitilliumWeb-Regular',
+    textAlign: 'center',
+  }),
 });
